@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        .fl {
+            width: 30%;
+            padding: 30px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+            border: 1px solid #000;
+            float: left;
+            box-sizing: border-box;
+            background: crimson;
+        }
+
+        .fr {
+            /* float: right; */ margin-left: 20px
+        }
+        #header{
+            width: 100%;
+            background: #555;
+            color: #fff;
+            padding: 10px;
+        }
+        .logo{
+            float: left;
+            width: 20%;
+            text-align: center;
+        }
+        .menuWraper{
+            width: 80%;
+            float: left;
+        }
+        .menuWraper ul{
+            float: right;
+            list-style-type: none;
+        }
+        .menuWraper ul li{
+            float: left;
+            line-height: 30px;
+        }
+        .menuWraper ul li a{
+            padding: 10px;
+            color: #000;
+            background: #ccc;
+            text-decoration: none;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <div class="logo">
+            <h2> MYLGOG </h2>
+        </div>
+        <div class="menuWraper">
+            <ul>
+                <li>
+                    <a href="#"> HOME </a>
+                </li>
+                <li>
+                    <a href="#"> ABOUT </a>
+                </li>
+                <li>
+                    <a href="#"> CONTACT </a>
+                </li>
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="fl">
+        SIDE 1
+    </div>
+    <div class="fl fr">
+        SIDE 2
+    </div>
+    <div class="clearfix"></div>
+    <p style="background:lime;">
+        aksjdhakjsdghkajkjasgdkjagsdjh
+    </p>
+</body>
+
+</html>
