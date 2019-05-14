@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width:200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            border:1px solid;
+        }
+        #static{
+            position: static;
+            left: 100px;
+        }
+        #relative{
+            width: 1220px;
+            position: relative;
+            left: 0px;
+            height: 400px;
+            top:0px;
+            background: rgb(223, 18, 218);
+            z-index: 999;
+        }
+        #absolute{
+            position: absolute;
+            left: 0px;
+            top:0px;
+        }
+        #fixed{
+            position: fixed;
+            right: 0px;
+            bottom:0px;
+            background: #ccc;
+
+        }
+        #sticky{
+            position: sticky;
+            top: 0px;
+            left:0px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="static" class="box">
+        STATIC
+    </div>
+    <div id="relative" class="box">
+            
+        <div id="absolute" class="box">
+            absolute
+    </div>
+    </div>
+    
+    <div id="fixed" class="box">
+            fixed
+    </div>
+    <div id="sticky" class="box">
+            sticky
+    </div>
+    <div style="height:1000px;"></div>
+</body>
+
+</html>
