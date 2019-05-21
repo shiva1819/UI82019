@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document
+    </title>
+    <style>
+            *{
+                
+            }
+            .bradius{
+                width: 200px;
+                height: 100px;
+                /* -webkit-border-radius:50%;
+                -moz-border-radius:50%;
+                -ms-border-radius:50%;
+                -o-border-radius:50%;
+                border-radius: 50%; */
+                border-top-left-radius: 5%;
+                border-top-right-radius: 50%;
+                border:1px solid;
+                text-align: center;
+                line-height: 100px;
+                background: none;
+                /* background: repeating-linear-gradient(to top, red  10% ,green 25%); */
+                /* background: radial-gradient(circle, red,green); */
+                /* transition:5s; */
+                transition-duration: 5s;
+                transition-property: letter-spacing, background;
+                /* transition-delay: 2s; */
+                transition-timing-function: cubic-bezier(1,-0.08,.89,.08);
+            }
+
+            .bradius:hover{
+                background: red;
+                letter-spacing: 30px;
+            }
+        </style>
+</head>
+<body>
+    <div class="bradius">
+        asda
+    </div>
+</body>
+</html>
