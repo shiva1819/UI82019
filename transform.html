@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul{
+            position: absolute;
+            top: 25%;
+        }
+        ul li{
+            width: 200px;
+            height: 200px;
+            border: 1px solid;
+            text-align: center;
+            line-height: 200px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-left:50px; 
+            transition: 1s;
+        }
+        #scale:hover{
+            transform: scale(1.5,1);
+        }
+        #trans:hover{
+            transform: translate(0px,100px);
+        }
+        #rotate:hover{
+            transform: rotate(5turn);
+            border-radius: 50%;
+        }
+        /* #skew{
+            width: 50%;
+            position: absolute;
+            /* right: -600px; */
+            /* top: 0px;
+            background: dodgerblue; */
+            /* height: 100vh; */
+        } */
+        #skew:hover{
+            transform: skew(45deg,20deg);
+        }
+        .all:hover{
+            transform: scale(1.5,1) rotate(180deg) translate(100px,0px) skew(25deg);
+        }
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li id="scale">
+            SCALE
+        </li>
+        <li id="trans">
+           TRANSLATE
+        </li>
+        <li id="rotate">
+            ROTATE
+        </li>
+        <li id="skew">
+            SKEW
+        </li>
+        <li class="all">
+            ALL
+        </li>
+    </ul>
+</body>
+
+</html>

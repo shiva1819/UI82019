@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        @font-face{
+            font-family: "SouthernAire_Personal_Use_Only";
+            src:url('./fonts/SouthernAire_Personal_Use_Only.ttf'); /* Headings */
+        }
+        body{
+            font-family: "SouthernAire_Personal_Use_Only";
+            padding: 100px;
+        }
+        #demo{
+            width: 300px;
+            height: 200px;
+            border:1px solid #000;
+            text-align: center;
+            position: relative;
+            bottom: 0px;
+            transition: 1s;
+            background:  url(./images/icon.png) no-repeat, url('./images/bg1.jpg') no-repeat;
+            background-size:contain,cover; 
+            
+        }
+        #demo:hover{
+            /* box-shadow: x y b i c; */
+            bottom: 10px;
+            box-shadow: 2px 2px 3px 0px #000;
+            text-shadow: 2px 0px 2px red; 
+        }
+        #ease{
+            width: 100px;
+            height: 100px;
+            border: 1px solid;
+            background: crimson;
+            transition: 1s;
+        }
+        #ease:hover{
+            margin-left: 300px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+   <div id="demo">
+    <h1> HEADING </h1>
+   </div>
+   <div id="ease"></div>
+</body>
+</html>
