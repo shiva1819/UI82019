@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            transition: 1s;
+        }
+        .wrap{
+            width: 300px;
+            height: 300px;
+            border: 1px solid;
+            margin: 100px auto;
+            border-radius: 5px;
+            padding: 10px;
+            perspective: 200px;
+            
+        }
+        .card{
+            width: 100%;
+            height: 100%;
+            background: #ccc;
+            position: relative;
+            /* transform: rotateX(0deg); */
+            transform-style: preserve-3d;
+        }
+        .fface, .bface{
+            width: 100%;
+            height: 100%;  
+            position: absolute;
+            backface-visibility: hidden;
+
+        }
+        .fface{
+            z-index: 111;
+             background: transparent;
+            transform: rotateX(0deg);
+        }
+        .bface{
+            background: green;
+            transform: rotateX(180deg);
+        }
+        .wrap:hover .card{
+            transform: rotateX(180deg);
+        }
+
+        #scaleEffect{
+            width: 200px;
+            height: 200px;
+            border: 5px solid red;
+            margin: auto;
+            position: relative;
+            overflow: hidden;
+            /* transition: 1s; */
+        }
+        #scaleEffect img{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+
+        #scaleEffect:hover img{
+            transform: scale(1.2,1.2);
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="card">
+            <div class="fface">
+                <h1> AUTOR NAME </h1>
+            </div>
+            <div class="bface">
+             <img src="./asda.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <div id="scaleEffect">
+        <img src="./images/bg1.jpg" alt="">
+    </div>
+
+
+</body>
+</html>

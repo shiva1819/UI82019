@@ -10,6 +10,8 @@
         ul{
             position: absolute;
             top: 25%;
+            perspective: 200px;
+            perspective-origin: 25% 25%;
         }
         ul li{
             width: 200px;
@@ -21,15 +23,18 @@
             display: inline-block;
             margin-left:50px; 
             transition: 1s;
+            transform-origin: 0% 50%;
+            backface-visibility: hidden;
+            
         }
         #scale:hover{
-            transform: scale(1.5,1);
+            transform: scaleZ(1.5);
         }
         #trans:hover{
             transform: translate(0px,100px);
         }
         #rotate:hover{
-            transform: rotate(5turn);
+            transform: rotateY(-180deg);
             border-radius: 50%;
         }
         /* #skew{
