@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #header ul{
+            display: flex;
+            /* height: 500px; */
+            border: 1px solid;
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+            justify-content: center; /* x-axis */
+            /* align-items: flex-start;  */
+            /* align-content: flex-start; */
+            /* flex-wrap: wrap; */
+            /* flex-direction: row; */
+        }
+        ul li{
+            border: 1px solid;
+            /* width: 200px; */
+            flex-grow: 1;
+            width: 200px;
+        }
+        .one{
+            order: 2;
+            flex-grow: 5;
+        }
+
+        ul li:nth-child(2){
+            order: 3;
+        }
+        ul li:nth-child(3){
+            order: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <ul>
+            <li class="one">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit, alias mollitia in cupiditate voluptate
+                reprehenderit unde? Commodi sed odio earum? 1
+            </li>
+            <li>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit, alias mollitia in cupiditate voluptate
+                reprehenderit unde? Commodi sed odio earum? 2
+            </li>
+            <li>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit, alias mollitia in cupiditate voluptate
+                reprehenderit unde? Commodi sed odio earum? 3
+            </li>
+            <!-- <li>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit, alias mollitia in cupiditate voluptate
+                    reprehenderit unde? Commodi sed odio earum?
+                </li>
+                <li>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit, alias mollitia in cupiditate voluptate
+                    reprehenderit unde? Commodi sed odio earum?
+                </li>
+                <li>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit, alias mollitia in cupiditate voluptate
+                    reprehenderit unde? Commodi sed odio earum?
+                </li>
+                <li>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit, alias mollitia in cupiditate voluptate
+                        reprehenderit unde? Commodi sed odio earum?
+                    </li>
+                    <li>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit, alias mollitia in cupiditate voluptate
+                        reprehenderit unde? Commodi sed odio earum?
+                    </li>
+                    <li>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit, alias mollitia in cupiditate voluptate
+                        reprehenderit unde? Commodi sed odio earum?
+                    </li> -->
+        </ul>
+    </div>
+</body>
+
+</html>

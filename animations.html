@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #demo{
+            width: 250px;
+            height: 250px;
+            /* border: 1px solid; */
+            animation-name: demo;
+            text-align: center;
+            line-height: 200px;
+            border-radius: 50%;
+            animation-duration: 5s;
+            animation-delay: 1s;
+            background: url(./images/spinner.png) no-repeat center;
+            background-size: 50%;
+            animation-iteration-count: infinite;
+            animation-direction: initial;
+            animation-timing-function:linear;
+        }
+        #demo:hover{ animation-play-state: paused;}
+        @keyframes demo{
+            0%{transform: rotate(0deg); opacity: 0;}
+            100%{ visibility: hidden;opacity: 1;}
+        }
+    </style>
+</head>
+<body>
+    <div id="demo">
+        <!-- TEST -->
+    </div>
+</body>
+</html>

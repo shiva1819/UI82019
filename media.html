@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+    header{
+        height: 50px;
+        background:#ccc;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    header button{
+        width: 200px;
+        display: none;
+    }
+    header ul{
+        flex-grow: 5;
+        display: flex;
+        list-style: none;
+        align-items: center;
+        padding: 10px;
+    }
+    header ul li{
+        width: 100px;
+    }
+    @media screen and (min-width:500px){
+        body{
+            background:red;
+            } 
+            header button{
+                display: block;
+            }
+           header ul li{
+                display: none;
+            }
+    }
+    </style>
+</head>
+
+<body>
+    <header>
+        <ul>
+            <li>
+                HOME
+            </li>
+            <li>
+                ABOUT
+            </li>
+            <li>
+                GALLERY
+            </li>
+        </ul>
+        <button> MENU </button>
+    </header>
+    <div style="width: 45.5%; background: chartreuse;"> 
+        
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo architecto totam, sunt officia sint fuga. Doloribus harum enim tempore inventore nobis earum. Modi enim sit id, odit nostrum dolore natus. </div>
+</body>
+
+</html>
