@@ -1,0 +1,122 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+#section1{
+    height: 100vh;
+    background: url(../images/bg22.jpg) no-repeat;
+    background-size: cover;
+}
+#header{
+    display: flex;
+    justify-content: space-around;
+    position: sticky;
+    left: 0px;
+    top: 0px;
+}
+#menu ul{
+    display: flex;
+    list-style: none;
+    width: 300px;
+    justify-content: space-around;
+
+}
+#menu ul li{
+    line-height: 50px;
+    width: 100px;
+    text-align: center;
+}
+#menu ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+#logo{
+    width: 10%;
+    line-height: 50px;
+    text-align: center;
+}
+#logo a{
+    text-decoration: none;
+    color: #fff;
+}
+#menu{
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+    
+}
+#sec_1{
+    color: #fff;
+    display: flex;
+    height: 90vh;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+#section2{
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 50px;
+    box-sizing: border-box;
+}
+#section2 h3{
+    padding: 20px;
+    margin-bottom:20px; 
+}
+#section2 ul{
+    display: flex;
+    width: 90%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#section2_0{
+    text-align: center;
+    padding: 40px 10px;
+}
+#section2 ul li{
+    /* border: 1px solid; */
+    list-style: none;
+    padding: 40px 20px 20px 20px;
+    text-align: center;
+    width:260px;
+    border-radius: 5px;
+    background: #eee;
+    height: 325px;
+}
+#section2 ul li p{
+    padding-top:20px;
+}
+.fs40{
+    font-size: 80px;
+}
+.clr_prpl{
+    color: #7e5782;
+}
+#footer{
+    text-align: center;
+    padding: 60px 0px;
+    background: pink;
+}
+#footer ul{
+    display: flex;
+    width: 30%;
+    margin: auto;
+    justify-content: space-between;
+}
+#footer ul li{
+    width: 100px;
+    height: 100px;
+    
+    border-radius: 20%;
+    list-style-type: none;
+    border: 1px solid;
+}
+#footer ul li i{
+    font-size: 5rem;
+    line-height: 100px;
+}
