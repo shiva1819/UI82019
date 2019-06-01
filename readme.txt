@@ -17,3 +17,6 @@ Links:
 https://kalvin.netlify.com/index-main.html
 https://lmpixels.com/demo/sunshine-demo/sunshine-version-2/sunshine-html-template/index.html#about_me
 http://www.lottanieminen.com/graphicdesign
+
+Dummy DATA: 
+https://jsonplaceholder.typicode.com/users

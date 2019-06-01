@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./fonts/fontawesome/css/all.css">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: 'Nunito', sans-serif;
+        }
+        main{
+            display: flex;
+        }
+        main > section{
+            width: 50%;
+            height: 100vh;
+            /* border:1px solid #000; */
+        }
+        main > section:first-child{
+            background: url('./images/login.jpg') no-repeat;
+            background-size:cover; 
+        }
+        main > section.login{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .loginForm{
+            width: 50%;
+            text-align: center;   
+        }
+        .loginForm article{
+           position: relative;   
+        }
+        .loginForm article input{
+            width: 100%;
+            padding: 10px 32px 10px 10px;
+            /* border-radius: 5px; */
+            margin-top: 10px;
+            border:0px;
+            outline: none;
+            font-size: 1.2rem;
+            border-bottom: 1px solid #ccc;
+        }
+        .loginForm article i{
+            position: absolute;
+            right: 0px;
+            top: 20px;
+        }
+        .loginForm button{
+            width: 50%;
+            padding: 15px;
+            margin-top: 50px;
+            background: dodgerblue;
+            color: #fff;
+            outline: none;
+            border: 0px;
+            border-radius: 20px;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        .fs-3{
+            font-size: 24px;
+            color: dodgerblue;
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+
+        </section>
+        <section class="login">
+            <form class="loginForm">
+                <article>
+                    <input type="text" name="username" class="username" placeholder="username">
+                    <i class="fas fa-user fs-3"></i>
+                </article>
+                <article>
+                    <input type="password" name="password" class="password" placeholder="password">
+                    <i class="fas fa-unlock fs-3"></i>
+                </article>
+                <article>
+                    <button type="button" class="signin"> LOG IN</button>
+                </article>
+                <p style="margin-top: 50px;">
+                    New User ? <a href="#" style="color: dodgerblue; text-decoration:none;"> create a free account </a>
+                </p>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
