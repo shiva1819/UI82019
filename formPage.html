@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,78 +9,109 @@
     <link rel="stylesheet" href="./fonts/fontawesome/css/all.css">
     <title>Document</title>
     <style>
-        *{
+        * {
             margin: 0px;
             padding: 0px;
             box-sizing: border-box;
             font-family: 'Nunito', sans-serif;
         }
-        main{
+
+        main {
             display: flex;
         }
-        main > section{
+
+        main>section {
             width: 50%;
             height: 100vh;
             /* border:1px solid #000; */
         }
-        main > section:first-child{
+
+        main>section:first-child {
             background: url('./images/login.jpg') no-repeat;
-            background-size:cover; 
+            background-size: cover;
         }
-        main > section.login{
+
+        main>section.login {
             display: flex;
             justify-content: center;
             align-items: center;
             position: relative;
         }
-        .loginForm{
+
+        .loginForm,
+        .singupForm {
             width: 50%;
-            text-align: center;   
+            text-align: center;
         }
-        .loginForm article{
-           position: relative;   
+
+        .loginForm article,
+        .singupForm article {
+            position: relative;
         }
-        .loginForm article input{
+
+        .loginForm article input,
+        .singupForm article input,
+        select {
             width: 100%;
             padding: 10px 32px 10px 10px;
             /* border-radius: 5px; */
             margin-top: 10px;
-            border:0px;
+            border: 0px;
             outline: none;
             font-size: 1.2rem;
             border-bottom: 1px solid #ccc;
         }
-        .loginForm article i{
+
+        .loginForm article i,
+        .singupForm article i {
             position: absolute;
             right: 0px;
             top: 20px;
         }
-        .loginForm button{
-            width: 50%;
+
+        .loginForm button,
+        .singupForm button {
+            width: 40%;
             padding: 15px;
             margin-top: 50px;
             background: dodgerblue;
             color: #fff;
             outline: none;
+            margin-left: 10px;
             border: 0px;
             border-radius: 20px;
             font-size: 1rem;
             font-weight: bold;
         }
-        .fs-3{
+
+        .fs-3 {
             font-size: 24px;
             color: dodgerblue;
         }
 
+        .mt-4 {
+            margin-top: 2rem;
+        }
+
+        input[type='radio'] {
+            width: 15px;
+            height: 15px;
+            margin-right: 10px;
+        }
+
+        .hide {
+            display: none;
+        }
     </style>
 </head>
+
 <body>
-    <main>
+    <main class="">
         <section>
 
         </section>
         <section class="login">
-            <form class="loginForm">
+            <form class="loginForm" autocomplete="off">
                 <article>
                     <input type="text" name="username" class="username" placeholder="username">
                     <i class="fas fa-user fs-3"></i>
@@ -92,10 +124,159 @@
                     <button type="button" class="signin"> LOG IN</button>
                 </article>
                 <p style="margin-top: 50px;">
-                    New User ? <a href="#" style="color: dodgerblue; text-decoration:none;"> create a free account </a>
+                    New User ? <a href="#" style="color: dodgerblue; text-decoration:none;" id="createAc"> create a free
+                        account </a>
+                </p>
+            </form>
+            <form class="singupForm hide" autocomplete="off">
+                <article>
+                    <input type="text" name="name" class="name1" placeholder="Name">
+                    <i class="fas fa-user fs-3"></i>
+                </article>
+                <article>
+                    <input type="password" name="password" class="password1" placeholder="password">
+                    <i class="fas fa-unlock fs-3"></i>
+                </article>
+                <article>
+                    <input type="email" name="email" class="email" placeholder="Email">
+                    <i class="fas fa-envelope fs-3"></i>
+                </article>
+                <article>
+                    <input type="text" name="contact" class="contact" placeholder="Contact">
+                    <i class="fas fa-phone-square fs-3"></i>
+                </article>
+                <article>
+                    <select name="country" id="country" class="country">
+                        <option value=""> -- Please Choose -- </option>
+                        <option value="india"> INDIA </option>
+                        <option value="us"> US </option>
+                        <option value="uk"> UK </option>
+                        <option value="canada"> CANADA </option>
+                    </select>
+                    <i class="fas fa-caret-square-down fs-3"></i>
+                </article>
+                <section class="mt-4">
+                    <i class="fas fa-male fs-3"></i> MALE <input type="radio" name="gender" value="male" class="male">
+                    <i class="fas fa-female fs-3"></i> FEMALE <input type="radio" name="gender" value="female" class="female">
+                </section>
+                <article>
+                    <button type="button" class="create"> CREATE </button>
+                    <button type="button" class="cancel"> CANCEL </button>
+                </article>
+                <p style="margin-top: 50px;" id="createWrap">
+                    New User ? <a href="/" style="color: dodgerblue; text-decoration:none;" id="createAc"> create a free
+                        account </a>
                 </p>
             </form>
         </section>
     </main>
+    <main class="hide" id="dashboard">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th> NAME </th>
+                    <th> PASSWORD </th>
+                    <th> EMAIL</th>
+                    <th> CONTACT </th>
+                    <th> COUNTRY </th>
+                    <th> GENDER </th>
+                    <th> EDIT/DELETE </th>
+                </tr>
+            </thead>
+            <tbody id="bindtoDash">
+                <tr>
+                    <td scope="row">a</td>
+                    <td>b</td>
+                    <td>c</td>
+                    <td scope="row">d</td>
+                    <td>e</td>
+                    <td>f</td>
+                    <td> <button> EDIT </button> <button> DELETE </button> </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+    <script>
+        var createAc = document.getElementById('createAc');
+        var singupForm = document.getElementsByClassName('singupForm')[0];
+        var cancel = document.getElementsByClassName('cancel')[0];
+        var loginForm = document.getElementsByClassName('loginForm')[0];
+        var createWrap = document.getElementById('createWrap');
+        var create = document.getElementsByClassName('create')[0];
+        var main = document.getElementsByTagName('main')[0]
+        var mainDash = document.getElementsByTagName('main')[1]
+
+
+
+
+        // form Fields
+
+        var userName, password, email, contact,country, gender;
+
+        userName = document.getElementsByClassName('name1')[0];
+            password = document.getElementsByClassName('password1')[0];
+            email = document.getElementsByClassName('email')[0];
+            contact = document.getElementsByClassName('contact')[0];
+            country = document.getElementsByClassName('country')[0];
+            genderMale = document.getElementsByClassName('male')[0];
+            genderFemale = document.getElementsByClassName('female')[0];
+
+
+        singupForm.style.display = "none";
+        createAc.addEventListener('click', function (e) {
+            e.preventDefault();
+            // alert();
+            // debugger
+            createWrap.style.display = "none";
+            if (singupForm.style.display == "none") {
+                singupForm.style.display = "block";
+                loginForm.style.display = "none";
+            } else {
+                singupForm.style.display = "none";
+                loginForm.style.display = "block";
+            }
+        });
+
+        cancel.addEventListener('click', function () {
+            singupForm.style.display = "none";
+            loginForm.style.display = "block";
+        });
+
+
+        create.addEventListener('click', function(){
+
+            console.log(userName.value);
+            console.log(password.value);
+            console.log(email.value);
+            console.log(contact.value);
+            console.log(country.value);
+
+            if(genderMale.checked == true){
+                console.log(genderMale.value);
+            }else if(genderFemale.checked == true){
+                console.log(genderFemale.value);
+            }
+            
+
+        var TR = document.createElement('tr');
+        var NameTD = document.createElement('td');
+        var PasswordTD = document.createElement('td');
+        var EmailTD = document.createElement('td');
+        var ContactTD = document.createElement('td');
+        var CountryTD = document.createElement('td');
+        var GenderTD = document.createElement('td');
+        var Edits = document.createElement('td');
+
+        console.log(TR);
+
+        // appendChild(), inserBefore(), removeChild(), parentNode, 
+
+
+            // mainDash.removeAttribute('class', "hide");
+            // mainDash.style.display = "flex";
+            // main.style.display = "none";
+        });
+    </script>
 </body>
+
 </html>
