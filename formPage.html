@@ -102,6 +102,12 @@
         .hide {
             display: none;
         }
+
+        #continue {
+            position: absolute;
+            right: 50px;
+            bottom: 50px;
+        }
     </style>
 </head>
 
@@ -157,10 +163,12 @@
                 </article>
                 <section class="mt-4">
                     <i class="fas fa-male fs-3"></i> MALE <input type="radio" name="gender" value="male" class="male">
-                    <i class="fas fa-female fs-3"></i> FEMALE <input type="radio" name="gender" value="female" class="female">
+                    <i class="fas fa-female fs-3"></i> FEMALE <input type="radio" name="gender" value="female"
+                        class="female">
                 </section>
                 <article>
                     <button type="button" class="create"> CREATE </button>
+                    <button type="button" class="update hide"> UPDATE </button>
                     <button type="button" class="cancel"> CANCEL </button>
                 </article>
                 <p style="margin-top: 50px;" id="createWrap">
@@ -195,6 +203,7 @@
                 </tr>
             </tbody>
         </table>
+        <button id="continue">continue</button>
     </main>
     <script>
         var createAc = document.getElementById('createAc');
@@ -205,21 +214,18 @@
         var create = document.getElementsByClassName('create')[0];
         var main = document.getElementsByTagName('main')[0]
         var mainDash = document.getElementsByTagName('main')[1]
-
-
-
-
-        // form Fields
-
-        var userName, password, email, contact,country, gender;
+        var bindtoDash = document.getElementById('bindtoDash');
+        var Continue = document.getElementById('continue');
+        var userName, password, email, contact, country, gender;
 
         userName = document.getElementsByClassName('name1')[0];
-            password = document.getElementsByClassName('password1')[0];
-            email = document.getElementsByClassName('email')[0];
-            contact = document.getElementsByClassName('contact')[0];
-            country = document.getElementsByClassName('country')[0];
-            genderMale = document.getElementsByClassName('male')[0];
-            genderFemale = document.getElementsByClassName('female')[0];
+        password = document.getElementsByClassName('password1')[0];
+        email = document.getElementsByClassName('email')[0];
+        contact = document.getElementsByClassName('contact')[0];
+        country = document.getElementsByClassName('country')[0];
+        genderMale = document.getElementsByClassName('male')[0];
+        genderFemale = document.getElementsByClassName('female')[0];
+        var update = document.getElementsByClassName('update')[0];
 
 
         singupForm.style.display = "none";
@@ -243,39 +249,129 @@
         });
 
 
-        create.addEventListener('click', function(){
-
+        create.addEventListener('click', function () {
+            var gender = "";
             console.log(userName.value);
             console.log(password.value);
             console.log(email.value);
             console.log(contact.value);
             console.log(country.value);
 
-            if(genderMale.checked == true){
+
+            if (genderMale.checked == true) {
+                gender = genderMale.value;
                 console.log(genderMale.value);
-            }else if(genderFemale.checked == true){
+            } else if (genderFemale.checked == true) {
                 console.log(genderFemale.value);
+                gender = genderFemale.value
             }
+
+
+            var TR = document.createElement('tr');
+            var NameTD = document.createElement('td');
+            NameTD.innerText = userName.value;
+
+            var PasswordTD = document.createElement('td');
+            PasswordTD.innerText = password.value;
+
+            var EmailTD = document.createElement('td');
+            EmailTD.innerText = email.value;
+
+            var ContactTD = document.createElement('td');
+            ContactTD.innerText = contact.value;
+
+            var CountryTD = document.createElement('td');
+            CountryTD.innerText = country.value;
+
+            var GenderTD = document.createElement('td');
+            GenderTD.innerText = gender;
+
+
+            var Edits = document.createElement('td');
+
+            var Edit = document.createElement('button');
+            Edit.innerText = "EDIT";
+            var Delete = document.createElement('button');
+            Delete.innerText = "DELETE";
+
+            Edits.appendChild(Edit);
+            Edits.appendChild(Delete);
+
+
+            // console.log(NameTD, PasswordTD);
+
+            // parent.appendChild(child), inserBefore(), removeChild(), parentNode, 
+
+
+            TR.appendChild(NameTD);
+            TR.appendChild(PasswordTD);
+            TR.appendChild(EmailTD);
+            TR.appendChild(ContactTD);
+            TR.appendChild(CountryTD);
+            TR.appendChild(GenderTD);
+            TR.appendChild(Edits);
+
+
+            bindtoDash.appendChild(TR);
+            console.log(TR);
+
+            // return false;    
+            mainDash.removeAttribute('class', "hide");
+            mainDash.style.display = "flex";
+            main.style.display = "none";
+
+
+
+            Continue.onclick = function () {
+                mainDash.setAttribute('class', "hide");
+                mainDash.style.display = "none";
+                main.style.display = "flex";
+
+
+            userName.value = ""
+            password.value = ""
+            email.value = "";
+            contact.value = "";
+            country.value = "";
             
+            if (genderMale.checked == true) {
+                genderMale.checked = false;
+                
+            } else if (genderFemale.checked == true) {
+                genderFemale.checked = false;
+            }
+            }
 
-        var TR = document.createElement('tr');
-        var NameTD = document.createElement('td');
-        var PasswordTD = document.createElement('td');
-        var EmailTD = document.createElement('td');
-        var ContactTD = document.createElement('td');
-        var CountryTD = document.createElement('td');
-        var GenderTD = document.createElement('td');
-        var Edits = document.createElement('td');
+            Edit.onclick = function(){
+                var ParentTR = this.parentNode.parentNode;
+                var ChildTd = ParentTR.children;
 
-        console.log(TR);
+                var tdName = ChildTd[0].innerText;
+                var tdPass = ChildTd[1].innerText;
+                var tdEmail = ChildTd[2].innerText;
+                var tdContact = ChildTd[3].innerText;
+                var tdCountry = ChildTd[4].innerText;
+                var tdGender = ChildTd[5].innerText;
 
-        // appendChild(), inserBefore(), removeChild(), parentNode, 
+                console.log(tdName);
+
+                mainDash.setAttribute('class', "hide");
+                mainDash.style.display = "none";
+                main.style.display = "flex";
+
+                userName.value = tdName;
+
+                create.setAttribute('class', 'hide');
+                update.removeAttribute('class');
 
 
-            // mainDash.removeAttribute('class', "hide");
-            // mainDash.style.display = "flex";
-            // main.style.display = "none";
+            }
+
+
+
+
         });
+
     </script>
 </body>
 
