@@ -170,6 +170,7 @@
                     <button type="button" class="create"> CREATE </button>
                     <button type="button" class="update hide"> UPDATE </button>
                     <button type="button" class="cancel"> CANCEL </button>
+                    <button type="button" class="dash" id="dashBtn"> DASHBOARD </button>
                 </article>
                 <p style="margin-top: 50px;" id="createWrap">
                     New User ? <a href="/" style="color: dodgerblue; text-decoration:none;" id="createAc"> create a free
@@ -192,7 +193,7 @@
                 </tr>
             </thead>
             <tbody id="bindtoDash">
-                <tr>
+                <!-- <tr>
                     <td scope="row">a</td>
                     <td>b</td>
                     <td>c</td>
@@ -200,7 +201,7 @@
                     <td>e</td>
                     <td>f</td>
                     <td> <button> EDIT </button> <button> DELETE </button> </td>
-                </tr>
+                </tr> -->
             </tbody>
         </table>
         <button id="continue">continue</button>
@@ -217,6 +218,8 @@
         var bindtoDash = document.getElementById('bindtoDash');
         var Continue = document.getElementById('continue');
         var userName, password, email, contact, country, gender;
+        // var dash = document.getElementsByClassName('dash')[0];
+        var dashBtn = document.getElementById('dashBtn');
 
         userName = document.getElementsByClassName('name1')[0];
         password = document.getElementsByClassName('password1')[0];
@@ -229,6 +232,12 @@
 
 
         singupForm.style.display = "none";
+
+        
+        var NameRegex = /^[a-zA-Z]+$/g;
+        var NumRegex = /^[0-9]+$/g;
+        var EmailRegEx = /[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm;
+
         createAc.addEventListener('click', function (e) {
             e.preventDefault();
             // alert();
@@ -249,7 +258,48 @@
         });
 
 
+        dashBtn.addEventListener('click', function(){
+                // alert();
+                // mainDash.setAttribute('class', "hide");
+                mainDash.style.display = "flex";
+                main.style.display = "none";
+            });
+
+
+        Continue.onclick = function () {
+                create.style.display = "inline";
+                update.style.display = "none";
+
+
+                // mainDash.setAttribute('class', "hide");
+                mainDash.style.display = "none";
+                main.style.display = "flex";
+
+
+            userName.value = ""
+            password.value = ""
+            email.value = "";
+            contact.value = "";
+            country.value = "";
+            
+            if (genderMale.checked == true) {
+                genderMale.checked = false;
+                
+            } else if (genderFemale.checked == true) {
+                genderFemale.checked = false;
+            }
+            }
+
+
         create.addEventListener('click', function () {
+
+            if(!NameRegex.test(userName.value)){
+                alert('Please enter a valid name...');
+            }else if(password.value.length < 6){
+                alert('Password Length should be min 6....');
+            }
+            else{
+
             var gender = "";
             console.log(userName.value);
             console.log(password.value);
@@ -322,25 +372,10 @@
 
 
 
-            Continue.onclick = function () {
-                mainDash.setAttribute('class', "hide");
-                mainDash.style.display = "none";
-                main.style.display = "flex";
 
 
-            userName.value = ""
-            password.value = ""
-            email.value = "";
-            contact.value = "";
-            country.value = "";
-            
-            if (genderMale.checked == true) {
-                genderMale.checked = false;
-                
-            } else if (genderFemale.checked == true) {
-                genderFemale.checked = false;
-            }
-            }
+
+           
 
             Edit.onclick = function(){
                 var ParentTR = this.parentNode.parentNode;
@@ -360,15 +395,56 @@
                 main.style.display = "flex";
 
                 userName.value = tdName;
+                password.value = tdPass;
+                email.value = tdEmail;
+                contact.value = tdContact;
+                country.value = tdCountry;
+                
+                if(tdGender == "male"){
+                    genderMale.checked = true;
+                }else{
+                    genderFemale.checked = true;
+                }
+                
+                // create.setAttribute('class', 'hide');
+                // update.removeAttribute('class');
 
-                create.setAttribute('class', 'hide');
-                update.removeAttribute('class');
+                create.style.display = "none";
+                update.style.display = "inline";
 
+            update.onclick = function(){
 
+                
+                mainDash.setAttribute('class', "hide");
+                mainDash.style.display = "flex";
+                main.style.display = "none";
+                
+                
+
+                ChildTd[0].innerText = userName.value;
+                ChildTd[1].innerText = password.value;
+                ChildTd[2].innerText = email.value;
+                ChildTd[3].innerText = contact.value;
+                ChildTd[4].innerText = country.value;
+
+                if(genderMale.checked == true){
+                    gender = "male";
+                }else{
+                    gender = "female";
+                }
+
+                ChildTd[5].innerText = gender;
+                
+
+                }
             }
 
+            Delete.onclick = function(){
+                // parenet.removeChild(child);
+                bindtoDash.removeChild(this.parentNode.parentNode);
+            }
 
-
+        }
 
         });
 
