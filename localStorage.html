@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" class="username" id="username">
+    <input type="password" class="password" id="password">
+    <button type="button" id="btn"> SAVE </button>
+    <ul id="demo">
+
+    </ul>
+    <script>
+        // var obj = [{name:"x"},{name:"y"}];
+        //     obj = JSON.stringify(obj);
+        // console.log(JSON.parse(obj));
+
+
+        var userName = document.querySelector('#username');
+        var passWord = document.querySelector('#password');
+        var btn = document.querySelector('#btn');
+        var demo = document.querySelector('#demo');
+        var arr;
+
+        // console.log(localStorage.getItem('user'));
+
+        btn.onclick = function(){
+            var obj = {};
+            
+            if( JSON.parse(localStorage.getItem('user')) != null){
+               arr = JSON.parse(localStorage.getItem('user'));
+            }else{
+                arr = [];
+            }
+
+
+            obj.uname = userName.value;
+            obj.upass = passWord.value;
+
+            console.log(obj);
+
+            arr.push(obj);
+
+            console.log(arr);
+
+            localStorage.setItem('user', JSON.stringify(arr));
+
+            userName.value = "";
+            passWord.value = "";
+
+
+            var fullInfo = JSON.parse(localStorage.getItem('user'));
+            var ele = "";
+            for(var i = 0; i < fullInfo.length; i++){
+                ele += "<li>"+fullInfo[i].uname +"</li>";
+            }
+
+            demo.innerHTML = ele;
+            
+        }
+
+        
+        var fullInfo = JSON.parse(localStorage.getItem('user'));
+            var ele = "";
+            for(var i = 0; i < fullInfo.length; i++){
+                ele += "<li>"+fullInfo[i].uname +"</li>";
+            }
+
+            demo.innerHTML = ele;
+
+        // localStorage.setItem('obj', JSON.stringify({name:"shiva"}));
+        // localStorage.getItem('obj');
+        // localStorage.removeItem('obj');
+        // localStorage.clear();
+        // sessionStorage.setItem('x', 'someInfo');
+
+
+    </script>
+</body>
+</html>
