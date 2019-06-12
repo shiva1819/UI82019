@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #demo {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="demo">
+        askdab
+    </div>
+
+    <script>
+        var demo = document.querySelector('#demo');
+
+        var time = 0;
+        var left = 0;
+        // var demo11 = setInterval(function () {
+        //     left += 10;
+        //     time++
+        //     demo.style.left = left + "px";
+        //     demo.style.top = left + "px";
+        //     console.log(time);
+
+        // }, 100);
+
+
+        // demo.onmouseover = function () {
+        //     clearInterval(demo11);
+        // }
+
+            console.log(time);
+
+            setTimeout(function(){
+                // alert('Hey..!!!');
+                console.log("left" + left);
+            });
+
+            console.log('time'+ time++);
+
+
+
+    </script>
+</body>
+
+</html>

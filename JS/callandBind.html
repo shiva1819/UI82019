@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // call, apply and bind;
+        var obj = {
+            Name:"shiva",
+            getFullName:function(){
+                return this.Name;
+            }
+        }
+
+
+        function demo(age, salary, id){
+            console.log(this.Name + "-" + age);
+            console.log(this.getFullName());
+            console.log(salary,id);
+        }
+        
+        // demo.call(obj,30, 2000, 1234);
+        // demo.apply(obj, [30, 2000, 1234]);
+        var test = demo.bind(obj);
+
+        test(30,5000,2355);
+        // console.log(test());
+
+
+
+
+
+
+    </script>
+</body>
+</html>

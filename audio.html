@@ -7,8 +7,61 @@
     <title>Document</title>
 </head>
 <body>
-    <video>
-        <source src="" type="video/mp4">
+    <video width="500" id="vid">
+        <source src="./Scrolling-iPhone-XR.mp4" type="video/mp4">
     </video>
+
+    <audio controls>
+        <source src="./spider.mp3" type="audio/mp3">
+    </audio>
+    <button type="button" id="btn">
+        Play
+    </button>
+    <input type="text" id="txt"> 
+    <p id="para"></p>
+    <select name="" id="drop">
+        <option value="demo"> DEMO </option>
+        <option value="demo1"> DEMO1 </option>
+    </select>
+
+    <input type="range" min="0" max="255" id="Range"> 
+    <input type="range" min="0" max="255" id="B_Range"> 
+    <input type="range" min="0" max="255" id="G_Range"> 
+
+    <script>
+        var btn = document.querySelector('#btn');
+        var vid = document.querySelector('#vid');
+        var drop = document.querySelector('#drop');
+        var txt = document.querySelector('#txt');
+        var para = document.querySelector('#para');
+        var Range = document.querySelector('#Range');
+
+
+        btn.onclick = function(){
+            if(vid.paused == true){
+                vid.play();
+                this.innerHTML = "Pause";
+            }else{
+                vid.pause();
+                this.innerHTML = "Play";
+            }
+            
+            
+        }
+
+        txt.onkeyup = function(){
+            console.log(this.value);
+            para.innerText = this.value;
+        }
+
+        Range.onchange = function(){
+            console.log(this.value);
+        }
+
+
+        drop.onchange = function(){
+            console.log(this.value);
+        }
+    </script>
 </body>
 </html>
