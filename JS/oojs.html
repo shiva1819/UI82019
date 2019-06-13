@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+
+    <script>
+        // clouser, hoisting, constructor/Obj, Inheritance, porototypes, Encapsulation, polymorphism, abstraction;
+
+
+        // clouser 
+/*
+        function demo(){
+            var a = 10;
+
+            function test(){
+                console.log(a);
+            }
+            test();
+        } 
+
+        demo();
+
+  */
+
+
+    // hoisting
+
+        // var a;
+        // a = 10;
+
+        function person(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        person.prototype.getInfo = function(){
+            return this.name + "-" + this.age;
+        }
+        // demo.prototype.gender = "male";
+
+
+        function employee(name,age,id){
+            person.call(this, name,age);
+            this.Id = id;
+        }
+
+        person.prototype.getInfo = function(){
+            return this.name + "-" + this.age + "-" + this.Id;
+        }
+
+        employee.prototype = new person();
+
+
+        var a = new person('shiva', 30);
+        // var a = new person('shiva', 30);
+        // var a = new person('shiva', 30);
+        // var a = new person('shiva', 30);
+
+        var b = new employee('siva', 30, 2222);
+
+        // console.log(a);
+        // console.log(b);
+
+
+
+        // Encapsulation
+
+        var enc = (function(){
+            var abc = 10;
+            var def = 20;
+            console.log(abc);
+
+            function check(){
+                return abc + def;
+            }
+
+            return {
+                abc: abc,
+                def:def,
+                check:check
+            }
+        })();   
+
+
+        // enc;
+        console.log(enc.check());
+
+
+
+    </script>
+</body>
+</html>
