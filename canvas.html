@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- CANVAS, SVG -->
+
+
+
+    <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx='50' cy='50' r='30' fill="red" stroke="black" stroke-width="5" />
+    </svg>
+
+    <!-- <canvas width="500" height="500" style="border:1px solid #000;" id="can">
+        Your browser not support this...
+    </canvas> -->
+    <script>
+        var can = document.querySelector('#can');
+        var ctx = can.getContext('2d');
+        
+        var x = 0;
+        var y = 0;
+            ctx.fillRect(10,10,100,100);
+            ctx.arc(100,100,40,0,(Math.PI) * 2);
+            ctx.fill();
+        
+        setInterval(function(){
+            
+        
+            ctx.beginPath();
+            ctx.moveTo(x,y);
+            ctx.lineTo(x += 10 , y += 10);
+            // ctx.moveTo(400,400);
+            // ctx.lineTo(400,100);
+            ctx.stroke();
+            ctx.clearRect(x,y,500,500);
+
+        },100);
+
+
+    </script>
+</body>
+</html>
