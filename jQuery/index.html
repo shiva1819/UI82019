@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        #demo{
+            width: 100px;
+            height: 100px;
+            /* background: #ccc; */
+            /* display: none; */
+        }
+        .bgClr{
+            background: red;
+        }
+        .fs20{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="demo"> sdasd </div>
+    <button id="btn"> CLICK </button>
+    <script>
+        // css Selectors...
+    //    var jq =  $.noConflict();
+        console.log($('div').html());
+
+
+        // effects
+        
+
+
+        // Events
+        $('#demo').addClass('bgClr');
+        $('#btn').click(function(){
+            // $('#demo').fadeToggle(2000);
+            // $('#demo').addClass('bgClr fs20');
+            $('#demo').animate({
+                width:"500px"
+            }, function(){
+                console.log($(this).width());
+            })
+
+        });
+
+        $('#btn').dblclick(function(){
+            // $('#demo').fadeToggle(2000);
+            $('#demo').removeClass('bgClr');
+        });
+    </script>
+</body>
+</html>
