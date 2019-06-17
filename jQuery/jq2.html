@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <ul id="list">
+        <li>
+            <a href="javascript:void(0)"> Home </a>
+        </li>
+        <li>
+             Home
+        </li>
+    </ul>
+
+    <input type="text" id="uname">
+
+    <script>
+        // append, before, after, empty, remove, hide, show
+
+        // $('#list').append('<li>ABOUT</li>');
+        // $('ul li:last-child').after('<li> newElement </li>');
+        // $('#list li:last-child').hide();
+
+        // // attr('key', 'valeu), attr('attr), removeAttr(); 
+        // $('ul li').css({
+        //     'background':'lime',
+        //     "font-size":30 + "px"
+        // });
+
+        // $('#list').prop('class', 'demo').removeProp('class');
+
+        // $('#uname').prop('name', 'shiva');
+        // $('#uname').removeProp('name');
+
+        console.log($('a').parentsUntil('body'));
+        console.log($('ul').find('a'));
+        $('ul li').eq(0).css('color', 'red');
+
+        // $('ul li a').click(function(e){
+        //     e.preventDefault();
+        // });
+    </script>
+</body>
+
+</html>
