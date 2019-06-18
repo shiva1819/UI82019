@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding:0px;
+            box-sizing: border-box;
+        }
+        .page{
+            height: 100vh;
+            padding-top:50px; 
+        }
+        header{
+            height: 50px;
+            background: #ccc;
+            position: sticky;
+            top: 0px;
+            left: 0px;
+        }
+        header nav #logo{
+            width: 200px;
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        header nav{
+            display: flex;
+            height: 100%;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header nav ul{
+            display: flex;
+            margin: 0px;
+            justify-content: space-evenly;
+            list-style: none;
+        }
+        header nav ul li{
+            width: 100px;
+            padding: 10px;
+            text-align: center;
+        }
+        header nav ul li a{
+            text-decoration: none;
+            color: #000;
+
+        }
+        header nav ul li:hover{
+            background: #777;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div id="logo">
+                LOGO
+            </div>
+            <ul>
+                <li>
+                    <a href="#Home"> HOME </a>
+                </li>
+                <li>
+                    <a href="#About"> ABOUT </a>
+                </li>
+                <li>
+                    <a href="#Portfolio"> PORTFOLIO </a>
+                </li>
+                <li>
+                    <a href="#Contact"> CONTACT </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div id="Home" class="page">
+        <h1> THIS IS HOME</h1>
+    </div>
+    <div id="About" class="page">
+        <h1> THIS IS ABOUT </h1>
+    </div>
+    <div id="Portfolio" class="page">
+        <h1> THIS IS PORTFOLIO</h1>
+    </div>
+    <div id="Contact" class="page">
+        <h1> THIS IS CONTACT</h1>
+    </div>
+    <script>
+        // console.log($('#About').offset().top);
+
+        // $('html,body').scrollTop('200');
+
+        $('nav ul li a').click(function(e){
+            e.preventDefault();
+            var Ids = $(this).attr('href');
+            console.log(Ids);
+            console.log($(Ids).offset().top);
+
+            $('html,body').animate({
+                scrollTop:$(Ids).offset().top
+            }, 200, "linear");
+        });
+
+                    
+        
+    </script>
+</body>
+
+</html>
